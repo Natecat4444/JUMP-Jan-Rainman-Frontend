@@ -7,6 +7,7 @@ import { BrowserRouter as Router,
 import react from 'react';
 import Login from './components/login';
 import Landing from './components/landing';
+import SignUp from './components/signup';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Landing />}/>
           <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />}/>
         </Routes>
       </Router>
     </div>
