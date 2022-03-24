@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Natecat4444/JUMP-Jan-Rainman-Frontend#readme",
   "dependencies": {
-    "react": "^17.0.2"
+    "react": "^17.0.2",
+    "react-router-dom": "^6.2.2"
   }
 }
