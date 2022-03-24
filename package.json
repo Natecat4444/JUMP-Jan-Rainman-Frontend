@@ -1,0 +1,22 @@
+{
+  "name": "jump-jan-rainman-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Natecat4444/JUMP-Jan-Rainman-Frontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Natecat4444/JUMP-Jan-Rainman-Frontend/issues"
+  },
+  "homepage": "https://github.com/Natecat4444/JUMP-Jan-Rainman-Frontend#readme",
+  "dependencies": {
+    "react": "^17.0.2"
+  }
+}
