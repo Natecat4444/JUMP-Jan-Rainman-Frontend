@@ -1,15 +1,16 @@
-const URI = "http://localhost:8080/api/users";
+const URI = "http://localhost:8080/api/";
 
 const RainUserAPI = {
     getToken: (setData) =>{
-        fetch( URI )
-            .then( result => result.json() )
-            .then( result => console.log(result ))
-            .catch(error => console.log(error) )
+        fetch( URI+"authenticate", {
+            method: 'POST',
+            body:JSON.stringify(setData),
+            headers: {"Content-Type": "application/json"}
+        } ).then( response => {console.log(response)}) 
     },
 
     createAccount: (user) =>{
-        fetch( URI, {
+        fetch( URI+"users", {
             method: 'POST',
             body: JSON.stringify(user),
             headers: {"Content-Type": "application/json", "Access-Control-Allow-Origin": "*"}
