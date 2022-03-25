@@ -12,6 +12,7 @@ const RainUserAPI = {
             return response.json()
         }) .then((data) =>{
             console.log(data.jwt)
+            localStorage.setItem('token', "Bearer "+data.jwt)
         })
     },
 
