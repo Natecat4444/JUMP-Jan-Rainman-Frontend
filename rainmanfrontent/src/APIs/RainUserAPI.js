@@ -11,8 +11,8 @@ const RainUserAPI = {
     createAccount: (user) =>{
         fetch( URI, {
             method: 'POST',
-            body: JSON.stringify(stringify),
-            headers: {"Content-Type": "application/json"}
+            body: JSON.stringify(user),
+            headers: {"Content-Type": "application/json", "Access-Control-Allow-Origin": "*"}
         } ).then(response =>{
             console.log(response)
             return response.json
@@ -21,3 +21,5 @@ const RainUserAPI = {
         })
     }
 }
+
+export default RainUserAPI
