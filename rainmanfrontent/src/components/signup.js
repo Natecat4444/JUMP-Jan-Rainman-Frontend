@@ -16,12 +16,12 @@ function SignUp(props){
             "first_name": first_name,
             "last_name": last_name,
             "password": password,
-            "role": "ROLE_User",
+            "role": "ROLE_USER",
             "enabled": true,
             "credit": 50
         }
 
-        
+        console.log(JSON.stringify(user))        
         RainUserAPI.createAccount(user)
     }
 
