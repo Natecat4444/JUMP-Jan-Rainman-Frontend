@@ -8,7 +8,7 @@ function SignUp(props){
     const[password, setPassword] = useState('')
 
     const handleSubmit = (event) => {
-        // event.preventDefault()
+        event.preventDefault()
 
         const user = {
             "userID": null,

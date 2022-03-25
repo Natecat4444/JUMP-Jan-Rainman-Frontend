@@ -6,6 +6,9 @@ function Login(props){
     const [password, setPassword] = useState('')
 
     const handleSubmit = (event) =>{
+
+        event.preventDefault()
+        
         const setData = {
             "username": username,
             "password": password

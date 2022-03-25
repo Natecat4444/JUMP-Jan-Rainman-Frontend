@@ -4,9 +4,15 @@ const RainUserAPI = {
     getToken: (setData) =>{
         fetch( URI+"authenticate", {
             method: 'POST',
-            body:JSON.stringify(setData),
+            body: JSON.stringify(setData),
             headers: {"Content-Type": "application/json"}
-        } ).then( response => {console.log(response)}) 
+        } ).then( response => {
+            console.log("hello")
+            console.log(response)
+            return response.json()
+        }) .then((data) =>{
+            console.log(data.jwt)
+        })
     },
 
     createAccount: (user) =>{
