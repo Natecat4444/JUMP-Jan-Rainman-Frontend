@@ -1,4 +1,4 @@
-const URI = "http://localhost:8080/api";
+const URI = "http://localhost:8080/api/users";
 
 const RainUserAPI = {
     getToken: (setData) =>{
