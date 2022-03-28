@@ -1,21 +1,45 @@
 import React, { Component, useState } from 'react'
+import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
+import Login from './login';
+import Landing from './landing';
+import SignUp from './signup';
+import CreateBet from './createBet';
 
 function Header(){ 
-    return(  
+    return(
   <div className="Header">
 
-  <header id="header" className="">
-
-    <nav id="navbar" className="">
-      <ul>
-        <li><a href="login" className=""><button><span>Log in</span></button></a></li>
-        <li><a href="signup" className=""><button><span>Sign Up</span></button></a></li>
-        <li><a href="createbet" className=""> <button><span>Create Bet</span></button></a></li>
-        {/* <li><a href="#contact" className="nav-link scrollto"><i className="bx bx-envelope"></i> <span>Contact</span></a></li> */}
-      </ul>
-    </nav>
-
-  </header>
+    <BrowserRouter>
+        <div className="help">
+        <header id="header" className="">
+        <nav id="navbar" className="">
+          <ul>
+            <li>
+              <NavLink to="/login" className = "">
+                <button>Login</button>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/signup" className = "">
+                <button>Sign Up</button>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/createbet" className = "">
+                <button>Create Bet</button>
+              </NavLink>
+            </li>
+          </ul>
+        </nav>
+        </header>
+        <Routes>
+          <Route path="/" element={<Landing />}/>
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />}/>
+          <Route path="/createbet" element={<CreateBet />} />
+        </Routes>
+        </div>
+      </BrowserRouter>
   </div>
   ); 
 }  
