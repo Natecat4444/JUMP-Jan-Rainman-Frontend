@@ -8,10 +8,12 @@ import Login from './components/login';
 import Landing from './components/landing';
 import SignUp from './components/signup';
 import CreateBet from './components/createBet';
+import Header from './components/nav';
 
 function App() {
   return (
     <div className='App'>
+      <Header />
       <Router>
         <Routes>
           <Route path="/" element={<Landing />}/>
