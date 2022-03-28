@@ -1,4 +1,5 @@
-const URI = "http://18.219.134.198:8080/api/";
+// const URI = "http://18.219.134.198:8080/api/";
+const URI = "http://localhost:8080/api/";
 
 const RainUserAPI = {
     getToken: (setData) =>{
@@ -20,7 +21,7 @@ const RainUserAPI = {
         fetch( URI+"users", {
             method: 'POST',
             body: JSON.stringify(user),
-            headers: {"Content-Type": "application/json"}
+            headers: {"Content-Type": "application/json", "Access-Control-Allow-Origin": "*"}
         } ).then(response =>{
             console.log(response)
             return response.json
@@ -36,6 +37,19 @@ const RainUserAPI = {
         } ).then( result => result.json() )
             .then(result => setData(result) )
             .catch( error => console.log(error))
+    },
+
+    createBet: (bet) =>{
+        fetch(URI+"bets",{
+            method: 'POST',
+            body: JSON.stringify(bet),
+            headers: {"Content-Type": "application/json", "Authorization":localStorage.getItem("token")}
+        }).then(response =>{
+            console.log(response)
+            return response.json
+        }).then((data) =>{
+            console.log(data)
+        })
     }
 }
 
