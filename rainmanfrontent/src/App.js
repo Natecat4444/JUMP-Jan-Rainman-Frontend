@@ -8,6 +8,7 @@ import react from 'react';
 import Login from './components/login';
 import Landing from './components/landing';
 import SignUp from './components/signup';
+import CreateBet from './components/createBet';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<Landing />}/>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />}/>
+          <Route path="/createBet" element={<CreateBet />} />
         </Routes>
       </Router>
     </div>
