@@ -10,7 +10,7 @@ function Header(){
   <div className="Header">
 
     <BrowserRouter>
-        <div className="help">
+    
         <header id="header" className="">
         <nav id="navbar" className="">
           <ul>
@@ -32,6 +32,8 @@ function Header(){
           </ul>
         </nav>
         </header>
+
+  <div className="help">
         <Routes>
           <Route path="/" element={<Landing />}/>
           <Route path="/login" element={<Login />} />
