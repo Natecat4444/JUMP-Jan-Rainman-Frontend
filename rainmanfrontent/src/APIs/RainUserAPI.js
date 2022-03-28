@@ -20,7 +20,7 @@ const RainUserAPI = {
         fetch( URI+"users", {
             method: 'POST',
             body: JSON.stringify(user),
-            headers: {"Content-Type": "application/json", "Access-Control-Allow-Origin": "*"}
+            headers: {"Content-Type": "application/json"}
         } ).then(response =>{
             console.log(response)
             return response.json
