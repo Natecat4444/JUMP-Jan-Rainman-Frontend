@@ -27,6 +27,10 @@ const RainUserAPI = {
         }).then( (data) =>{
             console.log(data)
         })
+    },
+
+    getCitiesList: (setData) =>{
+
     }
 }
 
