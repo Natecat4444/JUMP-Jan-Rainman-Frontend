@@ -18,10 +18,10 @@ function CreateBet(props){
     return(
         <div>
             <form>
-                <label>Credits: <input type="number" min="1" step="1" value={credits} onChange={(event)=>{setCredits(event.target.value)}}/></label>
-                <CityList name="citySelect" viewhandler={setviewhandler} />
-                <label>Date: <input type="date" value={date} onChange={(event)=>{setDate(event.target.value)}}/></label>
-                <label>Temperature: <input type="number" step="1" value={temp} onChange={(event)=>{setTemp(event.target.value)}}/></label>
+                <label>Credits: <input type="number" min="1" step="1" value={credits} onChange={(event)=>{setCredits(event.target.value)}}/></label> <br />
+                <label>City: <CityList name="citySelect" viewhandler={setviewhandler} /></label> <br />
+                <label>Date: <input type="date" value={date} onChange={(event)=>{setDate(event.target.value)}}/></label> <br />
+                <label>Temperature: <input type="number" step="1" value={temp} onChange={(event)=>{setTemp(event.target.value)}}/></label> <br />
                 <input type="submit" value="Create Bet" />
             </form>
         </div>

@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router,
   Routes,
@@ -18,7 +17,7 @@ function App() {
           <Route path="/" element={<Landing />}/>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />}/>
-          <Route path="/createBet" element={<CreateBet />} />
+          <Route path="/createbet" element={<CreateBet />} />
         </Routes>
       </Router>
     </div>

@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import RainUserAPI from "../../APIs/RainUserAPI";
 
 function CitySelect(props){
@@ -14,7 +14,11 @@ function CitySelect(props){
 }
 
 function CityList(props){
-    const list = RainUserAPI.getCitiesList(list);
+    const [list, setList] = useState([]);
+    useEffect(() =>{
+        RainUserAPI.getCitiesList(setList);
+    }, []);
+    
 
     return(<CitySelect name={props.name} viewhandler={props.viewhandler} items={list} />)
 }
