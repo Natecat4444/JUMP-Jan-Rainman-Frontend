@@ -30,7 +30,9 @@ const RainUserAPI = {
     },
 
     getCitiesList: (setData) =>{
-
+        fetch(URI+"cities").then( result => result.json() )
+            .then(result => setData(result) )
+            .catch( error => console.log(error))
     }
 }
 
