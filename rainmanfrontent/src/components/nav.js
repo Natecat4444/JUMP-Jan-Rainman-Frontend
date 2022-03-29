@@ -4,6 +4,7 @@ import Login from './login';
 import Landing from './landing';
 import SignUp from './signup';
 import CreateBet from './createBet';
+import Profile from './profile';
 
 function Header(){ 
     return(
@@ -39,6 +40,7 @@ function Header(){
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />}/>
           <Route path="/createbet" element={<CreateBet />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       </BrowserRouter>
   </div>
