@@ -31,7 +31,7 @@ function Profile(props){
                     {
                         bets.map( b=>
                             <tr key={b.bet_id}>
-                                <td>{b.city_id}</td>
+                                <td>{b.city.name}</td>
                                 <td>{b.wager}</td>
                                 <td>{b.temperature}</td>
                                 <td>{b.status}</td>
