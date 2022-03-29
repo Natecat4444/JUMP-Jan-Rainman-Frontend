@@ -20,6 +20,7 @@ function Admin(props){
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Credits</th>
+                    <th>Role</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </thead>
@@ -31,7 +32,9 @@ function Admin(props){
                                 <td>{u.username}</td>
                                 <td>{u.first_name}</td>
                                 <td>{u.last_name}</td>
-                                <td></td>
+                                <td>{u.credit}</td>
+                                <td>{u.role}</td>
+                                <td><a href='/admin/edituser/{u.user_id}'>Edit</a></td>
                                 <td></td>
                             </tr>
                         )
