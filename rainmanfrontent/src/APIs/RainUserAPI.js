@@ -50,6 +50,17 @@ const RainUserAPI = {
         }).then((data) =>{
             console.log(data)
         })
+    },
+
+    getUser: (setName, setCredits) =>{
+        fetch(URI+"user",{
+            method: 'GET',
+            headers:{"Authorization":localStorage.getItem("token")}
+        } ).then(result => result.json)
+            .then(result =>{
+                setName(result.username)
+                setCredits(result.credits)
+            }).catch(error => console.log(error))
     }
 }
 
