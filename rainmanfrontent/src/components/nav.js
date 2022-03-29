@@ -33,14 +33,13 @@ function Header(){
         </nav>
         </header>
 
-  <div className="help">
         <Routes>
+          <Route index element={<Landing/>}/>
           <Route path="/" element={<Landing />}/>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />}/>
           <Route path="/createbet" element={<CreateBet />} />
         </Routes>
-        </div>
       </BrowserRouter>
   </div>
   ); 
