@@ -11,6 +11,15 @@ const RainAdminApi ={
         .catch(error => console.log(error))
     },
 
+    getUser: (id, setdata) =>{
+        fetch(URI+"admin/user/"+id,{
+            method: 'GET',
+            headers:{"Authorization":localStorage.getItem("token")}
+        }).then(result => result.json())
+        .then(result => setdata(result))
+        .catch(error => console.log(error))
+    },
+
     deleteUser: (id) =>{
         fetch(URI+"users/"+id,{
             method: 'DELETE',

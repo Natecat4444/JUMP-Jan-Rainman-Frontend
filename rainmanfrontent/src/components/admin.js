@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import RainAdminApi from '../APIs/RainAdminAPI';
+import {NavLink, useParams} from 'react-router-dom'
 
 function Admin(props){
     const [users, setUsers] = useState([])
@@ -8,7 +9,7 @@ function Admin(props){
     useEffect (()=>{
         RainAdminApi.getUsers(setUsers);
         RainAdminApi.getBets(setBets)
-    })
+    }, [])
     return (
         <div>
             <h2>Admin Dashboard</h2>
@@ -27,14 +28,14 @@ function Admin(props){
                 <tbody>
                     {
                         users.map(u=>
-                            <tr key={u.user_id}>
-                                <td>{u.user_id}</td>
+                            <tr key={u.userID}>
+                                <td>{u.userID}</td>
                                 <td>{u.username}</td>
                                 <td>{u.first_name}</td>
                                 <td>{u.last_name}</td>
                                 <td>{u.credit}</td>
                                 <td>{u.role}</td>
-                                <td><a href='/admin/edituser/{u.user_id}'>Edit</a></td>
+                                <td><NavLink to={`/admin/edituser/${u.userID}`}>Edit</NavLink></td>
                                 <td></td>
                             </tr>
                         )
