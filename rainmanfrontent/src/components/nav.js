@@ -1,36 +1,50 @@
-import React, { Component, useState } from 'react'
+import React, { useState } from 'react'
 import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
 import Login from './login';
 import Landing from './landing';
 import SignUp from './signup';
 import CreateBet from './createBet';
 import Profile from './profile';
+import {CSSTransition} from 'react-transition-group';
+
+function toggleButton(isActive)
+{
+  isActive = !isActive;
+
+  console.log(isActive);
+  return isActive;
+}
 
 function Header(){ 
+  const [inProp, setInProp] = useState(false);
+
     return(
   <div className="Header">
 
     <BrowserRouter>
     
         <header id="header" className="">
+        <button className="toggleButton" onClick={() => setInProp(toggleButton(inProp))}>open</button>
         <nav id="navbar" className="">
-          <ul>
-            <li>
+          <CSSTransition in={inProp} timeout={2000} onExited = {() => setInProp(false)} classNames="my-node" unmountOnExit appear>
+            <div className="menu">
               <NavLink to="/login" className = "">
                 <button>Login</button>
               </NavLink>
-            </li>
-            <li>
+            
               <NavLink to="/signup" className = "">
                 <button>Sign Up</button>
               </NavLink>
-            </li>
-            <li>
+            
               <NavLink to="/createbet" className = "">
                 <button>Create Bet</button>
               </NavLink>
-            </li>
-          </ul>
+            
+              <NavLink to="/profile" className = "">
+                <button>Profile</button>
+              </NavLink>
+            </div>
+          </CSSTransition>
         </nav>
         </header>
 
@@ -51,3 +65,4 @@ function Header(){
 
   
 export default Header
+
