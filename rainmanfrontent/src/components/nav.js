@@ -34,8 +34,21 @@ function Header(){
     return(
   <div className="Header">
 
+    <div className = "navInfo">
+      <div className = "navUser">
+        <div className = "navUserImg">
+        </div>
+        <div className = 'navUserName'>
+          hello
+        </div>
+      </div>
+
+      <div className = "navCredits">
+        <p>world</p>
+      </div>
+    </div>
+
     <BrowserRouter>
-    
         <header id="header" className="">
         <button className="toggleButton bi bi-list" onClick={() => setInProp(toggleButton(inProp))}>{toggleImage}</button>
         </header>

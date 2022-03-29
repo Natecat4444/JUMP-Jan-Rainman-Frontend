@@ -87,15 +87,15 @@ header
 
 .menu
 {
-    background-color: darkgray;
+    background-color: rgb(145, 94, 36);
     padding-top: 125px;
     width: 275px;
     height: 150px;
 
     border-style: solid;
     border-top-style: none;
-    border-width: 5px;
-    border-color: gray;
+    border-width: 6px;
+    border-color: rgb(104, 67, 25);
 
     border-bottom-left-radius: 75px;
     border-bottom-right-radius: 75px;
@@ -123,5 +123,38 @@ header
   .my-node-enter-active,
   .my-node-exit-active{
     transition:  transform 500ms;
+  }
+
+  .navInfo
+  {
+      position: absolute;
+      z-index: 4;
+
+      left: 35%;
+      top: 1%;   
+  }
+
+ 
+
+  .navCredit
+  {
+        margin-left: 5px;
+        padding-top: -25px;
+  }
+
+ .navUser
+  {
+        margin-left: 5px;
+        margin-top: 25px;
+  }
+
+  .navUserName
+  {
+    border-style: solid;
+    border-width: 3px;
+    border-color: black;
+
+    width: 200px;
+    height: 25px;
   }
   
