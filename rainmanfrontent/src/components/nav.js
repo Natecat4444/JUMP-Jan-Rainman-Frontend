@@ -7,6 +7,7 @@ import CreateBet from './createBet';
 import Profile from './profile';
 import {CSSTransition} from 'react-transition-group';
 import LeaderBoard from './leaderboard';
+import { List } from 'react-bootstrap-icons';
 
 function toggleButton(isActive)
 {
@@ -25,7 +26,7 @@ function Header(){
     <BrowserRouter>
     
         <header id="header" className="">
-        <button className="toggleButton" onClick={() => setInProp(toggleButton(inProp))}>open</button>
+        <button className="toggleButton bi bi-list" onClick={() => setInProp(toggleButton(inProp))}><List color="royalblue" size={24}/></button>
         </header>
         <CSSTransition in={inProp} timeout={2000} onExited = {() => setInProp(false)} classNames="my-node" unmountOnExit appear>
         <div className="menu">
