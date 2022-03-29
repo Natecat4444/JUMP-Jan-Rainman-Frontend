@@ -2,12 +2,17 @@ import React, {useEffect, useState} from "react";
 import RainUserAPI from "../../APIs/RainUserAPI";
 
 function CitySelect(props){
+
+    const handleCity = (event) =>{
+        RainUserAPI.getCity(event.target.value, props.viewhandler);
+    }
     const options = props.items.map(
-        (item) => <option value={item.id} name={props.name} key={item.id}>{item.name}</option>
+        (item) => <option value={item.name} name={props.name} key={item.id}>{item.name}</option>
     );
 
     return(
-        <select name={props.name} onChange={(event) => props.viewhandler(event.target.value)}>
+        <select name={props.name} onChange={handleCity}>
+            <option></option>
             {options}
         </select>
     );

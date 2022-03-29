@@ -56,11 +56,39 @@ const RainUserAPI = {
         fetch(URI+"user",{
             method: 'GET',
             headers:{"Authorization":localStorage.getItem("token")}
-        } ).then(result => result.json)
+        } ).then(result => result.json())
             .then(result =>{
                 setName(result.username)
-                setCredits(result.credits)
+                setCredits(result.credit)
             }).catch(error => console.log(error))
+    },
+    
+    getBets: (setData) =>{
+        fetch(URI+"bets",{
+            method: 'GET',
+            headers:{"Authorization":localStorage.getItem("token")}
+        } ).then(result =>result.json())
+            .then(result => setData(result))
+            .catch(error => console.log(error))
+    },
+
+    getCity: (name, setCity) =>{
+        console.log("name: "+name.toString())
+        fetch(URI.concat("city/"+name),{
+            method: 'GET',
+            headers:{"Authorization":localStorage.getItem("token")}
+        }).then(result => result.json())
+            .then(result => setCity(result))
+            .catch(error => console.log(error))
+    },
+
+    getCityByID: (id, setCity) =>{
+        fetch(URI.concat("city/id/"+id),{
+            method: 'GET',
+            headers:{"Authorization":localStorage.getItem("token")}
+        }).then(result => result.json())
+            .then(result => setCity(result))
+            .catch(error => console.log(error))
     }
 }
 
