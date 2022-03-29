@@ -9,6 +9,7 @@ import Landing from './components/landing';
 import SignUp from './components/signup';
 import CreateBet from './components/createBet';
 import Header from './components/nav';
+import Profile from './components/profile';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />}/>
           <Route path="/createbet" element={<CreateBet />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       </Router>
     </div>
