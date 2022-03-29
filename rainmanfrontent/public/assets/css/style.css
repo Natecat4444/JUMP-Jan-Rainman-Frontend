@@ -1,3 +1,9 @@
+body
+{
+  min-width: 400px;
+}
+
+
 #header
 {
     background-color: forestgreen;
@@ -48,10 +54,13 @@ header
 
 .toggleButton
 {
+
+  position: absolute;
+  left: 80%;
+  top: 5%;
+
     width: 50px;
     height: 50px;
-    margin-left: 250px;
-    margin-top: 5px;
 
     font-size: 24px;
     text-align: center;
@@ -136,16 +145,22 @@ header
 
  
 
-  .navCredit
+  .navCredits
   {
-        margin-left: 5px;
-        padding-top: -25px;
+    position: absolute;
+    z-index: 4;
+
+    left: 20%;
+    top: 45%;
   }
 
  .navUser
   {
-        margin-left: 5px;
-        margin-top: 25px;
+    position: absolute;
+    z-index: 4;
+
+    left: 10%;
+    top: 15%;
   }
 
   .navUserName
@@ -156,7 +171,84 @@ header
 
     background-color: #fff;
 
+    width: 245px;
+    height: 50px;
+
+    border-bottom-right-radius: 75px;
+    border-top-right-radius: 75px;
+  }
+
+  .navUserImg
+  {
+    border-style: solid;
+    border-width: 3px;
+    border-color: black;
+
+    background-color: #fff;
+    border-radius: 90px;
+
+    float: left;
+    margin-top: -15px;
+    margin-left: -15px;
+    margin-right: 5px;
+
+    width: 80px;
+    height: 80px;
+  }
+
+  .navCreditImg
+  {
+    border-style: solid;
+    border-width: 3px;
+    border-color: black;
+
+    background-color: #fff;
+    border-radius: 90px;
+
+    float: left;
+    margin-top: -7px;
+    margin-left: -12px;
+    margin-right: 5px;
+
+    background-color: yellow;
+
+    width: 60px;
+    height: 60px;
+  }
+
+  .navCreditImg p
+  {
+    margin-top: 11px;
+  }
+
+  .navCreditAmount
+  {
+    border-style: solid;
+    border-width: 3px;
+    border-color: black;
+
+    background-color: #fff;
+
+    border-bottom-right-radius: 75px;
+    border-top-right-radius: 75px;
+
+    width: 230px;
+    height: 45px;
+  }
+
+  .navCreditAmount p
+  {
+    margin-top: 10px;
+    
     width: 200px;
-    height: 25px;
+    text-align: left;
+  }
+
+  .navUserName p
+  {
+    margin-top: 15px;
+    
+    width: 225px;
+    text-align: left;
   }
   
