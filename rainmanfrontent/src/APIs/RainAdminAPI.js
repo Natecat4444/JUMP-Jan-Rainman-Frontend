@@ -30,7 +30,7 @@ const RainAdminApi ={
             method: 'GET',
             headers:{"Authorization":localStorage.getItem("token")}
         }).then(result => result.json())
-            .then(setData(result))
+            .then(result => setData(result))
     },
 
     deleteBet: (id) =>{
