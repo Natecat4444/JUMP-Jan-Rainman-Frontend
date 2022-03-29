@@ -8,6 +8,9 @@ import Profile from './profile';
 import {CSSTransition} from 'react-transition-group';
 import LeaderBoard from './leaderboard';
 import { List, ArrowUp } from 'react-bootstrap-icons';
+import Admin from './admin';
+import EditUser from '../adminsubpages/EditUser';
+import EditBet from '../adminsubpages/EditBet';
 
 function toggleButton(isActive)
 {
@@ -86,6 +89,9 @@ function Header(){
           <Route path="/createbet" element={<CreateBet />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/leaderboard" element={<LeaderBoard />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/admin/edituser" element={<EditUser />} />
+          <Route path="/admin/editbet" element={<EditBet />} />
         </Routes>
       </BrowserRouter>
   </div>

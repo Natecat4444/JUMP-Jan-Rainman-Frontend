@@ -13,6 +13,8 @@ function Profile(props){
         RainUserAPI.getBets(setBets)
     }, [])
 
+    
+
     return(
         <div>
             <h2>Welcome {user}</h2>
@@ -25,6 +27,8 @@ function Profile(props){
                         <th>Amount wagered</th>
                         <th>Temperature</th>
                         <th>Status</th>
+                        <th>Creation Date</th>
+                        <th>Forecast Date</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -35,6 +39,8 @@ function Profile(props){
                                 <td>{b.wager}</td>
                                 <td>{b.temperature}</td>
                                 <td>{b.status}</td>
+                                <td>{b.creation_date}</td>
+                                <td>{b.forecast_date}</td>
                             </tr>
                         )
                     }
