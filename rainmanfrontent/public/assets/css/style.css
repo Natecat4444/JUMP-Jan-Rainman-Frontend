@@ -154,6 +154,8 @@ header
     border-width: 3px;
     border-color: black;
 
+    background-color: #fff;
+
     width: 200px;
     height: 25px;
   }
