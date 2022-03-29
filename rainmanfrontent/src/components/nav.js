@@ -26,28 +26,32 @@ function Header(){
     
         <header id="header" className="">
         <button className="toggleButton" onClick={() => setInProp(toggleButton(inProp))}>open</button>
-        <nav id="navbar" className="">
-          <CSSTransition in={inProp} timeout={2000} onExited = {() => setInProp(false)} classNames="my-node" unmountOnExit appear>
-            <div className="menu">
-              <NavLink to="/login" className = "">
+        </header>
+        <CSSTransition in={inProp} timeout={2000} onExited = {() => setInProp(false)} classNames="my-node" unmountOnExit appear>
+        <div className="menu">
+            <nav id="navbar" className="">
+              <NavLink to="/login" className = "" onClick={() => setInProp(false)}>
                 <button>Login</button>
               </NavLink>
             
-              <NavLink to="/signup" className = "">
+              <NavLink to="/signup" className = "" onClick={() => setInProp(false)}>
                 <button>Sign Up</button>
               </NavLink>
             
-              <NavLink to="/createbet" className = "">
+              <NavLink to="/createbet" className = "" onClick={() => setInProp(false)}>
                 <button>Create Bet</button>
               </NavLink>
             
-              <NavLink to="/profile" className = "">
+              <NavLink to="/profile" className = "" onClick={() => setInProp(false)}>
                 <button>Profile</button>
               </NavLink>
-            </div>
-          </CSSTransition>
-        </nav>
-        </header>
+
+              <NavLink to="/leaderboard" className = "" onClick={() => setInProp(false)}>
+                <button>Leaderboard</button>
+              </NavLink>
+              </nav>
+        </div>
+        </CSSTransition>
 
         <Routes>
           <Route index element={<Landing/>}/>
