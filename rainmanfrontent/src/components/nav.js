@@ -100,8 +100,8 @@ function Header(){
           <Route path="/profile" element={<Profile />} />
           <Route path="/leaderboard" element={<LeaderBoard />} />
           <Route path="/admin" element={<Admin />} />
-          <Route path="/admin/edituser" element={<EditUser />} />
-          <Route path="/admin/editbet" element={<EditBet />} />
+          <Route path="/admin/edituser/:id" element={<EditUser />} />
+          <Route path="/admin/editbet/:id" element={<EditBet />} />
         </Routes>
       </BrowserRouter>
   </div>
