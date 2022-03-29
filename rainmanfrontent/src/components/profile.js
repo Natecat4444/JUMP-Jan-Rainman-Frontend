@@ -23,6 +23,7 @@ function Profile(props){
                     <tr>
                         <th>City</th>
                         <th>Amount wagered</th>
+                        <th>Temperature</th>
                         <th>Status</th>
                     </tr>
                 </thead>
@@ -32,6 +33,7 @@ function Profile(props){
                             <tr key={b.bet_id}>
                                 <td>{b.city_id}</td>
                                 <td>{b.wager}</td>
+                                <td>{b.temperature}</td>
                                 <td>{b.status}</td>
                             </tr>
                         )

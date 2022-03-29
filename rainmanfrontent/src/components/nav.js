@@ -6,6 +6,7 @@ import SignUp from './signup';
 import CreateBet from './createBet';
 import Profile from './profile';
 import {CSSTransition} from 'react-transition-group';
+import LeaderBoard from './leaderboard';
 
 function toggleButton(isActive)
 {
@@ -55,6 +56,7 @@ function Header(){
           <Route path="/signup" element={<SignUp />}/>
           <Route path="/createbet" element={<CreateBet />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/leaderboard" element={<LeaderBoard />} />
         </Routes>
       </BrowserRouter>
   </div>

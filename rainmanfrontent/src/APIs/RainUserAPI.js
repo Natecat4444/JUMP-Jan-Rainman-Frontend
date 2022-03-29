@@ -89,6 +89,15 @@ const RainUserAPI = {
         }).then(result => result.json())
             .then(result => setCity(result))
             .catch(error => console.log(error))
+    },
+
+    getLeaderBoard: (setData) =>{
+        fetch(URI+"user/leaderboard",{
+            method: 'GET',
+            headers:{"Authorization":localStorage.getItem("token")}
+        } ).then(result => result.json())
+            .then(result => setData(result))
+            .catch(error => console.log(error))
     }
 }
 
