@@ -7,15 +7,26 @@ import CreateBet from './createBet';
 import Profile from './profile';
 import {CSSTransition} from 'react-transition-group';
 import LeaderBoard from './leaderboard';
-import { List } from 'react-bootstrap-icons';
+import { List, ArrowUp } from 'react-bootstrap-icons';
 
 function toggleButton(isActive)
 {
   isActive = !isActive;
 
+  if(isActive)
+  {
+    toggleImage = <ArrowUp color="white" size={24}/>;
+  }
+  else
+  {
+    toggleImage = <List color="white" size={24}/>;
+  }
+
   console.log(isActive);
   return isActive;
 }
+
+var toggleImage = <List color="white" size={24}/>;
 
 function Header(){ 
   const [inProp, setInProp] = useState(false);
@@ -26,7 +37,7 @@ function Header(){
     <BrowserRouter>
     
         <header id="header" className="">
-        <button className="toggleButton bi bi-list" onClick={() => setInProp(toggleButton(inProp))}><List color="royalblue" size={24}/></button>
+        <button className="toggleButton bi bi-list" onClick={() => setInProp(toggleButton(inProp))}>{toggleImage}</button>
         </header>
         <CSSTransition in={inProp} timeout={2000} onExited = {() => setInProp(false)} classNames="my-node" unmountOnExit appear>
         <div className="menu">

@@ -1,6 +1,6 @@
 #header
 {
-    background-color: black;
+    background-color: forestgreen;
 }
 
 
@@ -9,8 +9,7 @@
     list-style-type: none;
     display:inline-block;
     width: 200px;
-    height: 50px;
-    
+    height: 50px; 
 }
 
 #navbar ul
@@ -34,6 +33,11 @@ header
     padding: 10px;
     height: 150px;
 
+    border-style: solid;
+    border-top-style: none;
+    border-width: 10px;
+    border-color: darkgreen;
+
     border-bottom-left-radius: 175px;
     border-bottom-right-radius: 175px;
 
@@ -48,11 +52,33 @@ header
     height: 50px;
     margin-left: 250px;
     margin-top: 5px;
-    border-bottom-left-radius: 175px;
-    border-bottom-right-radius: 175px;
-    border-top-left-radius: 175px;
-    border-top-right-radius: 175px;
+
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: brown;
+    border: solid;
+    border-width: 5px;
+    border-color: darkred;
+    border-radius: 90px;
+    box-shadow: 0 9px #666;
 }
+
+.toggleButton:hover
+{
+    background-color: rgb(167, 0, 0)
+}
+
+.toggleButton:active
+{
+    background-color: darkred;
+    box-shadow: 0 5px #444;
+    transform: translateY(4px);
+}
+
+
 
 .help
 {
@@ -61,13 +87,15 @@ header
 
 .menu
 {
-    background-color: gray;
-    border-color: black;
+    background-color: darkgray;
     padding-top: 125px;
     width: 275px;
     height: 150px;
 
-    border: 2px;
+    border-style: solid;
+    border-top-style: none;
+    border-width: 5px;
+    border-color: gray;
 
     border-bottom-left-radius: 75px;
     border-bottom-right-radius: 75px;
@@ -81,23 +109,19 @@ header
 }
 
   .my-node-enter{
-    opacity: 0;
     transform: translate(-50%, -125%);
   }
   .my-node-enter-active{
-    opacity: 1;
     transform: translate(-50%, -45%);
   }
   .my-node-exit{
-    opacity: 1;
     transform: translate(-50%, -45%);
   }
   .my-node-exit-active{
-    opacity: 0;
     transform: translate(-50%, -125%);
   }
   .my-node-enter-active,
   .my-node-exit-active{
-    transition: opacity 500ms, transform 500ms;
+    transition:  transform 500ms;
   }
   
