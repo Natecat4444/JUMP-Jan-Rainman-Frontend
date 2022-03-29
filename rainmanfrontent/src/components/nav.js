@@ -7,7 +7,7 @@ import CreateBet from './createBet';
 import Profile from './profile';
 import {CSSTransition} from 'react-transition-group';
 import LeaderBoard from './leaderboard';
-import { List, ArrowUp } from 'react-bootstrap-icons';
+import { List, ArrowUp, Coin } from 'react-bootstrap-icons';
 import Admin from './admin';
 import EditUser from '../adminsubpages/EditUser';
 import EditBet from '../adminsubpages/EditBet';
@@ -35,25 +35,35 @@ function Header(){
   const [inProp, setInProp] = useState(false);
 
     return(
+      
+
+      
   <div className="Header">
 
-    <div className = "navInfo">
-      <div className = "navUser">
+    
+
+    <BrowserRouter>
+        <header id="header" className="">
+
+        <div className = "navUser">
         <div className = "navUserImg">
         </div>
         <div className = 'navUserName'>
-          hello
+          <p>hello hello hello</p>
         </div>
       </div>
 
       <div className = "navCredits">
-        <p>world</p>
+        <div className = "navCreditImg">
+          <p><Coin color="royalblue" size={40}/></p>
+        </div>
+        <div className = 'navCreditAmount'>
+          <p>world world world</p>
+        </div>
       </div>
-    </div>
 
-    <BrowserRouter>
-        <header id="header" className="">
-        <button className="toggleButton bi bi-list" onClick={() => setInProp(toggleButton(inProp))}>{toggleImage}</button>
+      <button className="toggleButton" onClick={() => setInProp(toggleButton(inProp))}>{toggleImage}</button>
+
         </header>
         <CSSTransition in={inProp} timeout={2000} onExited = {() => setInProp(false)} classNames="my-node" unmountOnExit appear>
         <div className="menu">
