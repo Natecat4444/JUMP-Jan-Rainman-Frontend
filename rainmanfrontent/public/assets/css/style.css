@@ -368,6 +368,8 @@ header
     border-style: solid;
     border-radius: 25px;
 
+    background-color: aliceblue;
+
     text-align:center;
 
     padding-top: 10px;
@@ -407,7 +409,7 @@ header
     border-bottom-right-radius: 25px;
 
     display: inline-block;
-    text-align: right;
+    text-align: left;
   }
 
   input[type=submit]
