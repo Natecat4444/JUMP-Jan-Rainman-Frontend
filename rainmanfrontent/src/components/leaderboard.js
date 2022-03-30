@@ -11,7 +11,11 @@ function LeaderBoard(props){
     console.log(leaders)
 
     return(
+        
         <div>
+        <div className = "routeTitle">
+          <h1>Leaderboard</h1>
+        </div>
             <h2>Top Ten Weather Betters</h2>
             <table>
                 <thead>
