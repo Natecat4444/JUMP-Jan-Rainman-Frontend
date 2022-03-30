@@ -56,7 +56,7 @@ function Header(){
         <div className = "navUser">
         <div className = "navUserImg">
         <NavLink to="/profile" className = "" onClick={() => setInProp(closeTab())}>
-                <button onClick={() => setLoadPage(pageLoading())}><img src="assets/images/emptyProfile.jpg"></img></button>
+                <button onClick={() => setLoadPage(pageLoading())}><img src="assets/images/emptyProfile.jpg" alt="profileImg"></img></button>
         </NavLink>
         </div>
         <div className = 'navUserName'>

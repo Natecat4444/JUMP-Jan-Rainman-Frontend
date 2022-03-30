@@ -329,7 +329,7 @@ header
     z-index: 4;
 
     left: 3%;
-    top: -7%;
+    top: -3%;
   }
 
   .routeTitle h1
@@ -360,13 +360,78 @@ header
   .routeContent
   {
     border-top-style: solid;
-    padding-top: 25px;
+    padding-top: 10px;
   }
 
   .form
   {
     border-style: solid;
-    max-width: 600px;
     border-radius: 25px;
+
+    text-align:center;
+
+    padding-top: 10px;
+  }
+
+  label
+  {
+    font-size: 28px;
+    border-style: solid;
+    border-width: 4px;
+    border-color: black;
+
+    padding: 5px;
+
+    background-color: royalblue;
+    color: white;
+
+    text-align: center;
+
+    height: 36px;
+
+
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+  }
+
+  input[type=text],input[type=password]
+  {
+    height: 36px;
+    font-size: 28px;
+    border-style: solid;
+    border-width: 3px;
+    padding: 5px 10px;
+    border-left-style: none;
+
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+
+    display: inline-block;
+    text-align: right;
+  }
+
+  input[type=submit]
+  {
+    min-height: 36px;
+    font-size: 28px;
+    border-style: solid;
+    border-width: 3px;
+    padding: 5px 10px;
+    border-radius: 25px;
+
+    margin-bottom: 25px;
+
+    display: inline-block;
+    text-align: right;
+  }
+
+  .formElement
+  {
+    height:33%;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+
+    margin-top: 50px;
   }
   
