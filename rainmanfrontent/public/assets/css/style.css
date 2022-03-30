@@ -328,13 +328,14 @@ header
 
     z-index: 4;
 
-    left: 5%;
-    top: 10%;
+    left: 3%;
+    top: -7%;
   }
 
   .routeTitle h1
   {
-    font-size: 32px;
+    font-size: 48px;
+    color: black;
   }
 
   .App
@@ -354,5 +355,18 @@ header
     transform: translate(-50%, -50%);
 
     background-color: darkgray;
+  }
+
+  .routeContent
+  {
+    border-top-style: solid;
+    padding-top: 25px;
+  }
+
+  .form
+  {
+    border-style: solid;
+    max-width: 600px;
+    border-radius: 25px;
   }
   

@@ -16,7 +16,7 @@ function Profile(props){
     
 
     return(
-        <div>
+        <div className = "routeContent">
         <div className = "routeTitle">
           <h1>Profile</h1>
         </div>

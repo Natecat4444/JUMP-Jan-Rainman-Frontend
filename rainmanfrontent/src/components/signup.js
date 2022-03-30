@@ -26,7 +26,7 @@ function SignUp(props){
     }
 
     return( 
-        <div>
+        <div className = "routeContent">
         <div className = "routeTitle">
           <h1>Signup</h1>
         </div>

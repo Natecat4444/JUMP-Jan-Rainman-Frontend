@@ -12,7 +12,7 @@ function LeaderBoard(props){
 
     return(
         
-        <div>
+        <div className = "routeContent">
         <div className = "routeTitle">
           <h1>Leaderboard</h1>
         </div>

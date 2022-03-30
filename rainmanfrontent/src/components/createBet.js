@@ -34,7 +34,7 @@ function CreateBet(props){
         
     }
     return(
-        <div>
+        <div className = "routeContent">
         <div className = "routeTitle">
           <h1>Create Bet</h1>
         </div>
