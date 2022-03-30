@@ -32,7 +32,7 @@ const RainAdminApi ={
             method: 'PUT',
             headers:{"Authorization":localStorage.getItem("token"), "Content-Type": "application/json"},
             body: JSON.stringify(user)
-        }).then(response => console.log(response))
+        }).then(response => {console.log(response); window.location.href="/admin/"})
     },
 
     getBets: (setData) =>{
@@ -64,7 +64,7 @@ const RainAdminApi ={
             method: 'PUT',
             headers:{"Authorization":localStorage.getItem("token"), "Content-Type": "application/json"},
             body: JSON.stringify(bet)
-        }).then(response => console.log(response))
+        }).then(response => {console.log(response); window.location.href ="/admin/"})
     }
 
 
