@@ -14,10 +14,10 @@ function EditBet(props){
 
         const bete = {
             "bet_id": bet.bet_id,
-            "user_id": bet.user.userID,
+            "user": bet.user,
             "city": bet.city,
             "wager": bet.wager,
-            "temperature": bet.temperature,
+            "temperature": temp,
             "forecast_date": bet.forecast_date,
             "creation_date": bet.creation_date,
             "status": bet.status
@@ -32,6 +32,7 @@ function EditBet(props){
         RainAdminApi.getBet(params.id, setBet)
     }, [])
 
+    console.log(bet.user)
     return(
         <div>
             <form onSubmit={handleSubmit}>

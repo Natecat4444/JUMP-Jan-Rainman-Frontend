@@ -10,6 +10,14 @@ function Admin(props){
         RainAdminApi.getUsers(setUsers);
         RainAdminApi.getBets(setBets)
     }, [])
+
+    const deleteUser =  (event) =>{
+        RainAdminApi.deleteUser(event.target.value)
+    }
+
+    const deleteBet = (event) =>{
+
+    }
     return (
         <div>
             <h2>Admin Dashboard</h2>
@@ -36,7 +44,7 @@ function Admin(props){
                                 <td>{u.credit}</td>
                                 <td>{u.role}</td>
                                 <td><NavLink to={`/admin/edituser/${u.userID}`}>Edit</NavLink></td>
-                                <td></td>
+                                <td><button onClick={deleteUser} value={u.userID}>Delete</button></td>
                             </tr>
                         )
                     }
@@ -71,7 +79,7 @@ function Admin(props){
                                 <td>{b.creation_date}</td>
                                 <td>{b.forecast_date}</td>
                                 <td><NavLink to={`/admin/editbet/${b.bet_id}`}>Edit</NavLink></td>
-                                <td></td>
+                                <td><button onClick={deleteBet}>Delete</button></td>
                             </tr>    
                         )
                     }
