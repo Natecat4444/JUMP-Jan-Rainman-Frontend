@@ -4,53 +4,44 @@ import RainAdminApi from '../APIs/RainAdminAPI';
 
 function EditUser(props){
     const[user, setUser] = useState([])
-    const[username, setUsername] = useState('');
-    const[id, setID] = useState(0)
-    const[first_name, setFirst_name] = useState('')
-    const[last_name, setLast_name] = useState('')
-    const[credit, setCredit] = useState(0)
-    const[role, setRole] = useState('')
+    const[role, setRole] = useState('ROLE_USER')
+    const[addcredit, setAddCredit] = useState(0)
 
     let params = useParams();
     useEffect (()=>{
         RainAdminApi.getUser(params.id, setUser)
+        console.log(user)
     }, []) //once this runs initilize all state values for the form
-
-    setUsername(user.username)
-    setID(user.userID)
-    setFirst_name(user.first_name)
-    setLast_name(user.last_name)
-    setCredit(user.credit)
-    setRole(user.role)
+    
 
     const handleSubmit = (event) =>{
         event.preventDefault()
-        const user ={
-            "userID": id,
-            "username": username,
-            "first_name": first_name,
-            "last_name": last_name,
+        const usere ={
+            "userID": user.userID,
+            "username": user.username,
+            "password": user.password,
+            "first_name": user.first_name,
+            "last_name": user.last_name,
             "role": role,
-            "credit": credit,
+            "credit": user.credit+parseInt(addcredit),
+            "enabled": true
         }
 
-        RainAdminApi.editBet(user)
+        console.log(usere)
+
+        RainAdminApi.editUser(usere)
     }
 
 
     return(
         <div>
             <form onSubmit={handleSubmit}>
-                <label>ID:<input type="number" value={id} /></label>
-                <label>Username:<input type="text" value={username} onChange={(event)=>{setUsername(event.target.value)}}/></label>
-                <label>First Name:<input type="text" value={first_name} onChange={(event)=>{setFirst_name(event.target.value)}}/></label>
-                <label>Last Name:<input type="text" value={last_name} onChange={(event)=>{setLast_name(event.target.value)}}/></label>
-                <label>Credits:<input type="number" value={credit} onChange={(event)=>{setCredit(event.target.value)}}/></label>
-                <label>Role<select onChange={(event)=>setRole(event.target.value)}>
+                <label>Add Credits:<input type="number" value={addcredit} onChange={(event)=>{setAddCredit(event.target.value)}}/></label> <br />
+                <label>Role<select onChange={(event)=>setRole(event.target.value)}> 
                     <option value="ROLE_USER">ROLE_USER</option>
                     <option value="ROLE_ADMIN">ROLE_ADMIN</option>
                     </select>
-                </label>
+                </label><br />
                 <input type="submit" value="submit" />
             </form>
         </div>

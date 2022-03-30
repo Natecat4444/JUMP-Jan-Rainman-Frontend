@@ -43,6 +43,7 @@ function Admin(props){
                 </tbody>
             </table>
             <h3>Bets</h3>
+            <table>
                 <thead>
                     <th>ID</th>
                     <th>User</th>
@@ -73,6 +74,7 @@ function Admin(props){
                         )
                     }
                 </tbody>
+                </table>
         </div>
     )
 }

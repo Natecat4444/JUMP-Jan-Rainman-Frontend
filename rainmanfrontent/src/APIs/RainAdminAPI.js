@@ -30,7 +30,8 @@ const RainAdminApi ={
     editUser: (user) =>{
         fetch(URI+"users",{
             method: 'PUT',
-            headers:{"Authorization":localStorage.getItem("token")}
+            headers:{"Authorization":localStorage.getItem("token"), "Content-Type": "application/json"},
+            body: JSON.stringify(user)
         }).then(response => console.log(response))
     },
 
