@@ -32,7 +32,7 @@ function EditBet(props){
         RainAdminApi.getBet(params.id, setBet)
     }, [])
 
-    console.log(bet.user)
+    // console.log(bet.user)
     return(
         <div>
             <form onSubmit={handleSubmit}>

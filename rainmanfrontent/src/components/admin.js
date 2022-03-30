@@ -1,11 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import RainAdminApi from '../APIs/RainAdminAPI';
 import {NavLink, useParams} from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 
 function Admin(props){
     const [users, setUsers] = useState([])
     const [bets, setBets] = useState([])
 
+    let navigate = useNavigate();
     useEffect (()=>{
         RainAdminApi.getUsers(setUsers);
         RainAdminApi.getBets(setBets)
@@ -16,7 +18,7 @@ function Admin(props){
     }
 
     const deleteBet = (event) =>{
-
+        RainAdminApi.deleteBet(event.target.value)
     }
     return (
         <div>
@@ -24,6 +26,7 @@ function Admin(props){
             <h3>Users</h3>
             <table>
                 <thead>
+                    <tr>
                     <th>ID</th>
                     <th>Username</th>
                     <th>First Name</th>
@@ -32,6 +35,7 @@ function Admin(props){
                     <th>Role</th>
                     <th>Edit</th>
                     <th>Delete</th>
+                    </tr>
                 </thead>
                 <tbody>
                     {
@@ -44,7 +48,7 @@ function Admin(props){
                                 <td>{u.credit}</td>
                                 <td>{u.role}</td>
                                 <td><NavLink to={`/admin/edituser/${u.userID}`}>Edit</NavLink></td>
-                                <td><button onClick={deleteUser} value={u.userID}>Delete</button></td>
+                                <td><button onClick={deleteUser} value={u.userID} href="/admin/" >Delete</button></td>
                             </tr>
                         )
                     }
@@ -79,7 +83,7 @@ function Admin(props){
                                 <td>{b.creation_date}</td>
                                 <td>{b.forecast_date}</td>
                                 <td><NavLink to={`/admin/editbet/${b.bet_id}`}>Edit</NavLink></td>
-                                <td><button onClick={deleteBet}>Delete</button></td>
+                                <td><button onClick={deleteBet} value={b.bet_id}>Delete</button></td>
                             </tr>    
                         )
                     }

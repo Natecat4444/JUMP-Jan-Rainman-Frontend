@@ -24,7 +24,7 @@ const RainAdminApi ={
         fetch(URI+"users/"+id,{
             method: 'DELETE',
             headers:{"Authorization":localStorage.getItem("token")}
-        }).then(response => console.log(response))
+        }).then(response => {console.log(response); window.location.reload();})
     },
 
     editUser: (user) =>{
@@ -56,7 +56,7 @@ const RainAdminApi ={
         fetch(URI+"bets/"+id,{
             method: 'DELETE',
             headers:{"Authorization":localStorage.getItem("token")}
-        }).then(response => console.log(response))
+        }).then(response => {console.log(response); window.location.reload()})
     },
 
     editBet: (bet) =>{
