@@ -14,6 +14,7 @@ const RainUserAPI = {
         }) .then((data) =>{
             console.log(data.jwt)
             localStorage.setItem('token', "Bearer "+data.jwt)
+            window.location.href = "/profile"
         })
     },
 
@@ -26,7 +27,8 @@ const RainUserAPI = {
             console.log(response)
             return response.json
         }).then( (data) =>{
-            console.log(data)
+            console.log(data);
+            window.location.href = "/login"
         })
     },
 
@@ -49,6 +51,7 @@ const RainUserAPI = {
             return response.json
         }).then((data) =>{
             console.log(data)
+            window.location.href = "/profile"
         })
     },
 
