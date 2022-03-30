@@ -22,6 +22,11 @@ function Login(props){
 
     return(
         <div>
+
+        <div className = "routeTitle">
+          <h1>Title</h1>
+        </div>
+
             <form onSubmit={handleSubmit}>
                 <label>Username:<input type="text" value={username} onChange={(event)=>{setUsername(event.target.value)}}/></label> <br />
                 <label>Password:<input type="password" value={password} onChange={(event)=>{setPassword(event.target.value)}}/></label> <br />
