@@ -122,20 +122,36 @@ header
 }
 
   .my-node-enter{
+    opacity: 0;
     transform: translate(-50%, -125%);
   }
   .my-node-enter-active{
+    opacity: 1;
     transform: translate(-50%, -45%);
   }
   .my-node-exit{
+    opacity: 1;
     transform: translate(-50%, -45%);
   }
   .my-node-exit-active{
+    opacity: 0;
     transform: translate(-50%, -125%);
   }
   .my-node-enter-active,
   .my-node-exit-active{
-    transition:  transform 500ms;
+    transition:  opacity 500ms, transform 500ms;
+  }
+
+  .route-Load-enter{
+    opacity: 0;
+    transform: translate(0%, 125%);
+  }
+  .route-Load-enter-active{
+    opacity: 1;
+    transform: translate(0%, 0%);
+  }
+  .route-Load-enter-active{
+    transition:  opacity 750ms, transform 750ms;
   }
 
   .navInfo
