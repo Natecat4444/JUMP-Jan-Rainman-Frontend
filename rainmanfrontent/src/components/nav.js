@@ -75,7 +75,7 @@ function Header(){
       <button className="toggleButton" onClick={() => setInProp(toggleButton(inProp))}>{toggleImage}</button>
 
         </header>
-        <CSSTransition in={inProp} timeout={2000} onExited = {() => setInProp(closeTab())} classNames="my-node" unmountOnExit appear>
+        <CSSTransition in={inProp} timeout={500} onExited = {() => setInProp(closeTab())} classNames="my-node" unmountOnExit appear>
         <div className="menu">
             <nav id="navbar" className="">
               <NavLink to="/login" className = "" onClick={() => setInProp(closeTab())}>
@@ -100,7 +100,7 @@ function Header(){
               </nav>
         </div>
         </CSSTransition>
-
+      <div className ="routePages" >
         <Routes>
           <Route index element={<Landing/>}/>
           <Route path="/" element={<Landing />}/>
@@ -113,6 +113,7 @@ function Header(){
           <Route path="/admin/edituser/:id" element={<EditUser />} />
           <Route path="/admin/editbet/:id" element={<EditBet />} />
         </Routes>
+      </div>
       </BrowserRouter>
   </div>
   ); 
