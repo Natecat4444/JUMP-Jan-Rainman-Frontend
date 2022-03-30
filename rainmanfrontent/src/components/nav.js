@@ -29,6 +29,13 @@ function toggleButton(isActive)
   return isActive;
 }
 
+function closeTab()
+{
+
+  toggleImage = <List color="white" size={24}/>;
+  return false;
+}
+
 var toggleImage = <List color="white" size={24}/>;
 
 function Header(){ 
@@ -47,6 +54,9 @@ function Header(){
 
         <div className = "navUser">
         <div className = "navUserImg">
+        <NavLink to="/profile" className = "" onClick={() => setInProp(closeTab())}>
+                <button><img src="assets/images/emptyProfile.jpg"></img></button>
+        </NavLink>
         </div>
         <div className = 'navUserName'>
           <p>hello hello hello</p>
@@ -65,22 +75,22 @@ function Header(){
       <button className="toggleButton" onClick={() => setInProp(toggleButton(inProp))}>{toggleImage}</button>
 
         </header>
-        <CSSTransition in={inProp} timeout={2000} onExited = {() => setInProp(false)} classNames="my-node" unmountOnExit appear>
+        <CSSTransition in={inProp} timeout={2000} onExited = {() => setInProp(closeTab())} classNames="my-node" unmountOnExit appear>
         <div className="menu">
             <nav id="navbar" className="">
-              <NavLink to="/login" className = "" onClick={() => setInProp(false)}>
+              <NavLink to="/login" className = "" onClick={() => setInProp(closeTab())}>
                 <button>Login</button>
               </NavLink>
             
-              <NavLink to="/signup" className = "" onClick={() => setInProp(false)}>
+              <NavLink to="/signup" className = "" onClick={() => setInProp(closeTab())}>
                 <button>Sign Up</button>
               </NavLink>
             
-              <NavLink to="/createbet" className = "" onClick={() => setInProp(false)}>
+              <NavLink to="/createbet" className = "" onClick={() => setInProp(closeTab())}>
                 <button>Create Bet</button>
               </NavLink>
             
-              <NavLink to="/profile" className = "" onClick={() => setInProp(false)}>
+              <NavLink to="/profile" className = "" onClick={() => setInProp(closeTab())}>
                 <button>Profile</button>
               </NavLink>
 
