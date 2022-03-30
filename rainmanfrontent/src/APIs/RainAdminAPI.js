@@ -43,6 +43,15 @@ const RainAdminApi ={
             .then(result => setData(result))
     },
 
+    getBet: (id, setdata) =>{
+        fetch(URI+"bets/"+id,{
+            method: 'GET',
+            headers:{"Authorization":localStorage.getItem("token")}
+        }).then(result => result.json())
+        .then(result => setdata(result))
+        .catch(error => console.log(error))
+    },
+
     deleteBet: (id) =>{
         fetch(URI+"bets/"+id,{
             method: 'DELETE',
@@ -53,7 +62,8 @@ const RainAdminApi ={
     editBet: (bet) =>{
         fetch(URI+"bets",{
             method: 'PUT',
-            headers:{"Authorization":localStorage.getItem("token")}
+            headers:{"Authorization":localStorage.getItem("token"), "Content-Type": "application/json"},
+            body: JSON.stringify(bet)
         }).then(response => console.log(response))
     }
 

@@ -1,22 +1,43 @@
 import React, {useEffect, useState} from 'react';
+import {useParams} from 'react-router-dom';
+import RainAdminApi from '../APIs/RainAdminAPI';
 
 function EditBet(props){
     const [credits, setCredits] = useState(1);
-    const [date, setDate] = useState("")
     const [temp, setTemp] = useState(0)
-    const[city, setCity] = useState('')
+    const [bet, setBet] = useState([])
 
-    const changeCity = (value) =>{
-        setCity(value)
+    let params = useParams();
+
+    const handleSubmit = (event) =>{
+        event.preventDefault()
+
+        const bete = {
+            "bet_id": bet.bet_id,
+            "user_id": bet.user.userID,
+            "city": bet.city,
+            "wager": bet.wager,
+            "temperature": bet.temperature,
+            "forecast_date": bet.forecast_date,
+            "creation_date": bet.creation_date,
+            "status": bet.status
+        }
+
+        // console.log(bete)
+
+        RainAdminApi.editBet(bete)
     }
 
     useEffect(() =>{
-        
-    })
+        RainAdminApi.getBet(params.id, setBet)
+    }, [])
 
     return(
         <div>
-
+            <form onSubmit={handleSubmit}>
+                <label>Enter new temperature:<input type="number" value={temp} onChange={(event)=>{setTemp(event.target.value)}}/></label> <br />
+                <input type="submit" value="Submit" />
+            </form>
         </div>
     )
 }

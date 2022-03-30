@@ -45,6 +45,7 @@ function Admin(props){
             <h3>Bets</h3>
             <table>
                 <thead>
+                    <tr>
                     <th>ID</th>
                     <th>User</th>
                     <th>City</th>
@@ -55,6 +56,7 @@ function Admin(props){
                     <th>Forecast Date</th>
                     <th>Edit</th>
                     <th>Delete</th>
+                    </tr>
                 </thead>
                 <tbody>
                     {
@@ -68,7 +70,7 @@ function Admin(props){
                                 <td>{b.status}</td>
                                 <td>{b.creation_date}</td>
                                 <td>{b.forecast_date}</td>
-                                <td></td>
+                                <td><NavLink to={`/admin/editbet/${b.bet_id}`}>Edit</NavLink></td>
                                 <td></td>
                             </tr>    
                         )
