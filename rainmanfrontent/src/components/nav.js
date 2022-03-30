@@ -30,27 +30,22 @@ function toggleButton(isActive)
 
 function closeTab()
 {
-  switchLoaded();
   toggleImage = <List color="white" size={24}/>;
   return false;
 }
 
-function switchLoaded()
+function pageLoading()
 {
-  pageLoaded = !pageLoaded;
+    return true;
 }
 
 var toggleImage = <List color="white" size={24}/>;
-var pageLoaded = false;
 
 function Header(){ 
   const [inProp, setInProp] = useState(false);
-  const [pageLoad, setPageLoad] = useState(false);
+  const [loadPage, setLoadPage] = useState(false);
 
-    return(
-      
-
-      
+    return( 
   <div className="Header">
 
     
@@ -61,7 +56,7 @@ function Header(){
         <div className = "navUser">
         <div className = "navUserImg">
         <NavLink to="/profile" className = "" onClick={() => setInProp(closeTab())}>
-                <button ><img src="assets/images/emptyProfile.jpg"></img></button>
+                <button onClick={() => setLoadPage(pageLoading())}><img src="assets/images/emptyProfile.jpg"></img></button>
         </NavLink>
         </div>
         <div className = 'navUserName'>
@@ -85,29 +80,29 @@ function Header(){
         <div className="menu">
             <nav id="navbar" className="">
               <NavLink to="/login" className = "" onClick={() => setInProp(closeTab())}>
-                <button>Login</button>
+                <button onClick={() => setLoadPage(pageLoading())}>Login</button>
               </NavLink>
             
               <NavLink to="/signup" className = "" onClick={() => setInProp(closeTab())}>
-                <button>Sign Up</button>
+                <button onClick={() => setLoadPage(pageLoading())}>Sign Up</button>
               </NavLink>
             
               <NavLink to="/createbet" className = "" onClick={() => setInProp(closeTab())}>
-                <button>Create Bet</button>
+                <button onClick={() => setLoadPage(pageLoading())}>Create Bet</button>
               </NavLink>
             
               <NavLink to="/profile" className = "" onClick={() => setInProp(closeTab())}>
-                <button>Profile</button>
+                <button onClick={() => setLoadPage(pageLoading())}>Profile</button>
               </NavLink>
 
               <NavLink to="/leaderboard" className = "" onClick={() => setInProp(closeTab())}>
-                <button>Leaderboard</button>
+                <button onClick={() => setLoadPage(pageLoading())}>Leaderboard</button>
               </NavLink>
               </nav>
         </div>
         </CSSTransition>
         
-        <CSSTransition in={pageLoaded} timeout={1000} onEnter = {() => switchLoaded()} classNames="route-Load">
+        <CSSTransition in={loadPage} timeout={300} onEntered={() => setLoadPage(false)} classNames="route-Load">
           <div className ="routePages" >
             <Routes>
               <Route index element={<Landing/>}/>

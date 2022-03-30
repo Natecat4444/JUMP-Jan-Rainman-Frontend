@@ -151,7 +151,7 @@ header
     transform: translate(0%, 0%);
   }
   .route-Load-enter-active{
-    transition:  opacity 750ms, transform 750ms;
+    transition:  opacity 300ms, transform 300ms;
   }
 
   .navInfo
