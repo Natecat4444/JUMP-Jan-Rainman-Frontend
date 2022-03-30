@@ -20,6 +20,10 @@ function Admin(props){
     const deleteBet = (event) =>{
         RainAdminApi.deleteBet(event.target.value)
     }
+
+    const updateBets = (event) =>{
+        RainAdminApi.forceBetUpdate()
+    }
     return (
         <div>
             <h2>Admin Dashboard</h2>
@@ -89,6 +93,7 @@ function Admin(props){
                     }
                 </tbody>
                 </table>
+                <button onClick={updateBets}>Force Bet Updates</button>
         </div>
     )
 }

@@ -65,6 +65,13 @@ const RainAdminApi ={
             headers:{"Authorization":localStorage.getItem("token"), "Content-Type": "application/json"},
             body: JSON.stringify(bet)
         }).then(response => {console.log(response); window.location.href ="/admin/"})
+    },
+
+    forceBetUpdate: () =>{
+        fetch(URI+"bets/update",{
+            method: 'PUT',
+            headers:{"Authorization":localStorage.getItem("token")}
+        }).then(response => {window.location.reload(); console.log(response)})
     }
 
 
