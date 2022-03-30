@@ -24,7 +24,7 @@ function Login(props){
         <div>
 
         <div className = "routeTitle">
-          <h1>Title</h1>
+          <h1>Login</h1>
         </div>
 
             <form onSubmit={handleSubmit}>
