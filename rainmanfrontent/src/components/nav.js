@@ -90,10 +90,6 @@ function Header(){
               <NavLink to="/createbet" className = "" onClick={() => setInProp(closeTab())}>
                 <button onClick={() => setLoadPage(pageLoading())}>Create Bet</button>
               </NavLink>
-            
-              <NavLink to="/profile" className = "" onClick={() => setInProp(closeTab())}>
-                <button onClick={() => setLoadPage(pageLoading())}>Profile</button>
-              </NavLink>
 
               <NavLink to="/leaderboard" className = "" onClick={() => setInProp(closeTab())}>
                 <button onClick={() => setLoadPage(pageLoading())}>Leaderboard</button>

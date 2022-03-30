@@ -35,6 +35,10 @@ function CreateBet(props){
     }
     return(
         <div>
+        <div className = "routeTitle">
+          <h1>Create Bet</h1>
+        </div>
+            
             <form onSubmit={handleSubmit}>
                 <label>Credits: <input type="number" min="1" step='1' value={credits} onChange={(event)=>{setCredits(event.target.value)}}/></label> <br />
                 <label>City: <CityList name="citySelect" viewhandler={changeCity} /></label> <br />

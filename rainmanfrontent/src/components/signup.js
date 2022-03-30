@@ -27,6 +27,9 @@ function SignUp(props){
 
     return( 
         <div>
+        <div className = "routeTitle">
+          <h1>Signup</h1>
+        </div>
             <form onSubmit={handleSubmit}>
                 <label>Username:<input type="text" value={username} onChange={(event)=>{setUsername(event.target.value)}} /></label> <br />
                 <label>First Name:<input type="text" value={first_name} onChange={(event)=>{setFirst_name(event.target.value)}} /></label> <br />

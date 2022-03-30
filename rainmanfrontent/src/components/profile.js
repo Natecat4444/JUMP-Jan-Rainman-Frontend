@@ -17,6 +17,9 @@ function Profile(props){
 
     return(
         <div>
+        <div className = "routeTitle">
+          <h1>Profile</h1>
+        </div>
             <h2>Welcome {user}</h2>
             <h3>You currently have {credits} credits availble</h3>
 
