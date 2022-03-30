@@ -25,21 +25,27 @@ function toggleButton(isActive)
     toggleImage = <List color="white" size={24}/>;
   }
 
-  console.log(isActive);
   return isActive;
 }
 
 function closeTab()
 {
-
+  switchLoaded();
   toggleImage = <List color="white" size={24}/>;
   return false;
 }
 
+function switchLoaded()
+{
+  pageLoaded = !pageLoaded;
+}
+
 var toggleImage = <List color="white" size={24}/>;
+var pageLoaded = false;
 
 function Header(){ 
   const [inProp, setInProp] = useState(false);
+  const [pageLoad, setPageLoad] = useState(false);
 
     return(
       
@@ -55,7 +61,7 @@ function Header(){
         <div className = "navUser">
         <div className = "navUserImg">
         <NavLink to="/profile" className = "" onClick={() => setInProp(closeTab())}>
-                <button><img src="assets/images/emptyProfile.jpg"></img></button>
+                <button ><img src="assets/images/emptyProfile.jpg"></img></button>
         </NavLink>
         </div>
         <div className = 'navUserName'>
@@ -75,7 +81,7 @@ function Header(){
       <button className="toggleButton" onClick={() => setInProp(toggleButton(inProp))}>{toggleImage}</button>
 
         </header>
-        <CSSTransition in={inProp} timeout={500} onExited = {() => setInProp(closeTab())} classNames="my-node" unmountOnExit appear>
+        <CSSTransition in={inProp} timeout={500} classNames="my-node" unmountOnExit>
         <div className="menu">
             <nav id="navbar" className="">
               <NavLink to="/login" className = "" onClick={() => setInProp(closeTab())}>
@@ -94,26 +100,29 @@ function Header(){
                 <button>Profile</button>
               </NavLink>
 
-              <NavLink to="/leaderboard" className = "" onClick={() => setInProp(false)}>
+              <NavLink to="/leaderboard" className = "" onClick={() => setInProp(closeTab())}>
                 <button>Leaderboard</button>
               </NavLink>
               </nav>
         </div>
         </CSSTransition>
-      <div className ="routePages" >
-        <Routes>
-          <Route index element={<Landing/>}/>
-          <Route path="/" element={<Landing />}/>
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<SignUp />}/>
-          <Route path="/createbet" element={<CreateBet />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/leaderboard" element={<LeaderBoard />} />
-          <Route path="/admin" element={<Admin />} />
-          <Route path="/admin/edituser/:id" element={<EditUser />} />
-          <Route path="/admin/editbet/:id" element={<EditBet />} />
-        </Routes>
-      </div>
+        
+        <CSSTransition in={pageLoaded} timeout={1000} onEnter = {() => switchLoaded()} classNames="route-Load">
+          <div className ="routePages" >
+            <Routes>
+              <Route index element={<Landing/>}/>
+              <Route path="/" element={<Landing />}/>
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<SignUp />}/>
+              <Route path="/createbet" element={<CreateBet />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/leaderboard" element={<LeaderBoard />} />
+              <Route path="/admin" element={<Admin />} />
+              <Route path="/admin/edituser/:id" element={<EditUser />} />
+              <Route path="/admin/editbet/:id" element={<EditBet />} />
+            </Routes>
+          </div>
+        </CSSTransition>
       </BrowserRouter>
   </div>
   ); 
