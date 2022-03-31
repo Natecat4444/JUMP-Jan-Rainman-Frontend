@@ -4,7 +4,8 @@ body
   
   height: 100vh;
   background: linear-gradient(#10416b, black);
-  
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 
@@ -354,6 +355,9 @@ header
     transform: translate(-50%, -50%);
 
     background-color: darkgray;
+
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   .routeContent
