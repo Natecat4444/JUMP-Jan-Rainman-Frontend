@@ -467,4 +467,26 @@ header
 
     margin-top: 10px;
   }
-  
+
+  td, th{
+    border-width: 1px;
+    border-style: solid;
+    padding: 5px;
+    margin: -2px;
+  }
+
+  table
+  {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .tablewrap
+  {
+    border-style: solid;
+    border-radius: 25px;
+    border-width: 3px;
+    overflow-y: scroll;
+    max-height: 200px;
+    text-align: center;
+  }
+    

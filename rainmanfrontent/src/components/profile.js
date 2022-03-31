@@ -22,7 +22,7 @@ function Profile(props){
         </div>
             <h2>Welcome {user}</h2>
             <h3>You currently have {credits} credits availble</h3>
-
+            <div className='tablewrap'> 
             <table>
                 <thead>
                     <tr>
@@ -49,6 +49,7 @@ function Profile(props){
                     }
                 </tbody>
             </table>
+            </div>
         </div>
     )
 }

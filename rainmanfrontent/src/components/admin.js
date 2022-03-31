@@ -28,6 +28,7 @@ function Admin(props){
         <div>
             <h2>Admin Dashboard</h2>
             <h3>Users</h3>
+            <div className='tablewrap'>
             <table>
                 <thead>
                     <tr>
@@ -58,7 +59,9 @@ function Admin(props){
                     }
                 </tbody>
             </table>
+            </div>
             <h3>Bets</h3>
+            <div className='tablewrap'>
             <table>
                 <thead>
                     <tr>
@@ -93,6 +96,7 @@ function Admin(props){
                     }
                 </tbody>
                 </table>
+                </div>
                 <button onClick={updateBets}>Force Bet Updates</button>
         </div>
     )

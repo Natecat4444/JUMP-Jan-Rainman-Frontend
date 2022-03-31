@@ -17,6 +17,7 @@ function LeaderBoard(props){
           <h1>Leaderboard</h1>
         </div>
             <h2>Top Ten Weather Betters</h2>
+            <div className="tablewrap">
             <table>
                 <thead>
                     <th>Username</th>
@@ -34,6 +35,7 @@ function LeaderBoard(props){
                     }
                 </tbody>
             </table>
+            </div>
         </div>
     )
 }
