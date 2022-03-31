@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
 import Login from './login';
 import Landing from './landing';
@@ -11,6 +11,7 @@ import { List, ArrowUp, Coin } from 'react-bootstrap-icons';
 import Admin from './admin';
 import EditUser from '../adminsubpages/EditUser';
 import EditBet from '../adminsubpages/EditBet';
+import RainUserAPI from '../APIs/RainUserAPI';
 
 function toggleButton(isActive)
 {
@@ -44,6 +45,12 @@ var toggleImage = <List color="white" size={24}/>;
 function Header(){ 
   const [inProp, setInProp] = useState(false);
   const [loadPage, setLoadPage] = useState(false);
+  const [username, setUsername] = useState('')
+  const [credit, setCredits] = useState(0)
+
+  useEffect(() =>{
+    RainUserAPI.getUser(setUsername, setCredits)
+  })
 
     return( 
   <div className="Header">
@@ -60,7 +67,7 @@ function Header(){
         </NavLink>
         </div>
         <div className = 'navUserName'>
-          <p>hello hello hello</p>
+          <p>{username}</p>
         </div>
       </div>
 
@@ -69,7 +76,7 @@ function Header(){
           <p><Coin color="royalblue" size={40}/></p>
         </div>
         <div className = 'navCreditAmount'>
-          <p>world world world</p>
+          <p>{credit}</p>
         </div>
       </div>
 
