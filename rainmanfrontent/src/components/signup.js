@@ -30,13 +30,15 @@ function SignUp(props){
         <div className = "routeTitle">
           <h1>Signup</h1>
         </div>
-            <form onSubmit={handleSubmit}>
-                <label>Username:<input type="text" value={username} onChange={(event)=>{setUsername(event.target.value)}} /></label> <br />
-                <label>First Name:<input type="text" value={first_name} onChange={(event)=>{setFirst_name(event.target.value)}} /></label> <br />
-                <label>Last Name:<input type="text" value={last_name} onChange={(event)=>{setLast_name(event.target.value)}} /></label> <br />
-                <label>Password:<input type="password" value={password} onChange={(event)=>{setPassword(event.target.value)}} /></label> <br />
-                <input type="submit" value="Create Account" />
-            </form>
+            <div className = 'form'>
+                <form onSubmit={handleSubmit}>
+                    <div className="formElement"> <label>Username</label><input type="text" value={username} onChange={(event)=>{setUsername(event.target.value)}} /></div> <br />
+                    <div className="formElement"><label>First Name</label><input type="text" value={first_name} onChange={(event)=>{setFirst_name(event.target.value)}} /></div> <br />
+                    <div className="formElement"><label>Last Name</label><input type="text" value={last_name} onChange={(event)=>{setLast_name(event.target.value)}} /></div> <br />
+                    <div className="formElement"><label>Password</label><input type="password" value={password} onChange={(event)=>{setPassword(event.target.value)}} /></div> <br />
+                    <input type="submit" value="Create Account" />
+                </form>
+            </div>
         </div>
     )
 }

@@ -412,6 +412,23 @@ header
     text-align: left;
   }
 
+  input[type=number],input[type=date], .CityList
+  {
+    height: 36px;
+    font-size: 28px;
+    border-style: solid;
+    border-width: 3px;
+    padding: 5px 10px;
+    border-left-style: none;
+    width: 250px;
+
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+
+    display: inline-block;
+    text-align: left;
+  }
+
   input[type=submit]
   {
     min-height: 36px;
@@ -427,6 +444,17 @@ header
     text-align: right;
   }
 
+
+  input[type=submit]:hover
+  {
+    background-color: #666;
+  }
+
+  input[type=submit]:active
+  {
+    background-color: #444;
+  }
+
   .formElement
   {
     height:33%;
@@ -434,6 +462,6 @@ header
     justify-content: center;
     align-items:center;
 
-    margin-top: 50px;
+    margin-top: 10px;
   }
   
