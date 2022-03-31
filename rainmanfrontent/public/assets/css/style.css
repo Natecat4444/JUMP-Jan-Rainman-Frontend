@@ -415,7 +415,7 @@ header
     text-align: left;
   }
 
-  input[type=number],input[type=date], input[name=citySelect]
+  input[type=number],input[type=date], input[name="citySelect"], select
   {
     height: 36px;
     font-size: 28px;
